@@ -26,12 +26,12 @@ def get_stages(season_id, api_key):
     response = requests.get(f'https://api.leagueos.gg/seasons/{season_id}/stages/', headers=headers)
     return response.json()
 
-def get_matches(stage_id, api_key):
+def get_matches(season_id, stage_id, api_key):
     headers = {
         'Accept': 'application/json',
         'x-leagueos-api-key': api_key
     }
-    response = requests.get(f'https://api.leagueos.gg/stages/{stage_id}/matches/', headers=headers)
+    response = requests.get(f'https://api.leagueos.gg/seasons/{season_id}/stages/{stage_id}/matches', headers=headers)
     return response.json()
 
 def get_teams(match_id, api_key):

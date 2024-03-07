@@ -1,29 +1,24 @@
 # main_script.py
 
 from endpoints import leagueos, aws
-from business_logic.app import seasons, stages, matchs, teams
+from business_logic.app import seasons, stages, matches, teams
 from business_logic.services import LOS_API, AWS_SCS
+from auth import api_key
 
 def main():
-    # Set your API key
-    api_key = ''
-
 
     # Get active seasons
     active_seasons = seasons.get_active_seasons(api_key)
-    print("Active Seasons:", active_seasons)
+
+    # Get active season ids
+    active_season_ids = seasons.get_active_seasonIds(api_key)
+    print("Active Season Ids:", active_season_ids)
     print()
 
-    # Get active seasons ids
-    active_seasonIds = seasons.get_active_seasonIds(api_key)
-    print("Active Season Ids:", active_seasonIds)
+    # Get active stage ids
+    active_stage_ids = stages.get_activeStageIds(api_key)
+    print("Active Stage Ids:", active_stage_ids)
     print()
-
-    # Get active stages 
-    active_stages = stages.get_activeStages(api_key)
-    print("Active stage Ids:", active_stages)
-    print()
-    
 
 if __name__ == "__main__":
     main()
