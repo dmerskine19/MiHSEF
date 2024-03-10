@@ -9,7 +9,7 @@ def main():
 
     # Get active seasons
     active_seasons = seasons.get_active_seasons(api_key)
-
+ 
     # Get active season ids
     active_season_ids = seasons.get_active_seasonIds(api_key)
     print("Active Season Ids:", active_season_ids)
@@ -19,6 +19,9 @@ def main():
     active_stage_ids = stages.get_activeStageIds(api_key)
     print("Active Stage Ids:", active_stage_ids)
     print()
+
+    active_match_ids = matches.get_activeMatchIds(api_key)
+
 
 if __name__ == "__main__":
     main()

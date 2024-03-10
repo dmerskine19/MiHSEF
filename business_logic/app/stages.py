@@ -18,7 +18,7 @@ def get_activeStageIds(api_key):
             stage_ids.extend(stage['id'] for stage in stages['data'])  # Extract stage IDs
 
         return stage_ids
-
+ 
     except Exception as e:
         print(f"Error: {e}")
         return None
