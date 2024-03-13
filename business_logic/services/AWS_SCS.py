@@ -15,7 +15,7 @@ def download_file(s3, bucket_name, file_key, destination_path):
 
 def send_email():
     # Create an SES client
-    ses_client = boto3.client('ses', region_name='your_region')
+    ses_client = boto3.client('ses', region_name='us-east-1')
 
     # Specify the sender email address
     sender_email = "your_sender_email@example.com"
